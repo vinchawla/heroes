@@ -1,0 +1,4 @@
+npm install @microsoft/microsoft-graph-types --save
+npm install @microsoft/microsoft-graph-client --save
+npm install --save-dev karma@3.0.0 
+npm install --save hellojs

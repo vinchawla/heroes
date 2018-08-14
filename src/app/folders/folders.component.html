@@ -1,3 +1,8 @@
-<p>
-  folders works!
-</p>
+
+      <div (click)="onLogout()">Disconnect</div>
+      <div (click)="checkVals()">Check</div>
+      <h2 *ngIf="me">Hi, {{ me.displayName }}!</h2>
+      <ul class="folders">
+         <li *ngFor="let item of items">
+            <span class="badge">a</span><a href={{item.webUrl}} target=_blank>{{item.name}}</a></li>
+      </ul>
