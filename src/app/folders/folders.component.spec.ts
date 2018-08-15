@@ -1,6 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router, RouterOutlet } from "@angular/router";
+import { HttpService } from '../shared/http.service';
+import { AuthService } from '../auth/auth.service';
+
+import { FoldersService } from './folders.service';
 
 import { FoldersComponent } from './folders.component';
+
+class MockRouter { public navigate() {}; }
 
 describe('FoldersComponent', () => {
   let component: FoldersComponent;
@@ -8,7 +16,13 @@ describe('FoldersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FoldersComponent ]
+      declarations: [ FoldersComponent ],
+      providers: [ 
+        {provide: Router,  useClass: MockRouter },
+        RouterOutlet,
+        FoldersService,
+        HttpService,
+        AuthService ]
     })
     .compileComponents();
   }));
